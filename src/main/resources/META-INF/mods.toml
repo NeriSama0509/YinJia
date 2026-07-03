@@ -1,70 +1,75 @@
-# This is an example mods.toml file. It contains the data relating to the loading mods.
-# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
-# The overall format is standard TOML format, v0.5.0.
-# Note that there are a couple of TOML lists in this file.
-# Find more information on toml format here:  https://github.com/toml-lang/toml
-# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
-modLoader="javafml" #mandatory
-# A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[41,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-# The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
-# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="All rights reserved"
-# A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
-# A list of mods - how many allowed here is determined by the individual mod loader
-[[mods]] #mandatory
-# The modid of the mod
-modId="examplemod" #mandatory
-# The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-# ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
-# see the associated build.gradle script for how to populate this completely automatically during a build
-version="${file.jarVersion}" #mandatory
- # A display name for the mod
-displayName="Example Mod" #mandatory
-# A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
-#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
-# A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-# A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
-# A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
-# A text field displayed in the mod UI
-authors="Love, Cheese and small house plants" #optional
-# Display Test controls the display for your mod in the server connection screen
-# MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
-# IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
-# IGNORE_ALL_VERSION means that your mod will not cause a red X if it's present on the client or the server. This is a special case and should only be used if your mod has no server component.
-# NONE means that no display test is set on your mod. You need to do this yourself, see IExtensionPoint.DisplayTest for more information. You can define any scheme you wish with this value.
-# IMPORTANT NOTE: this is NOT an instruction as to which environments (CLIENT or DEDICATED SERVER) your mod loads on. Your mod should load (and maybe do nothing!) whereever it finds itself.
-#displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
+# 这是一个示例 mods.toml 文件。它包含与模组加载相关的数据。
+# 有几个必填字段（#mandatory），以及更多可选字段（#optional）。
+# 整体格式为标准 TOML 格式，v0.5.0 版本。
+# 注意此文件中有几个 TOML 列表。
+# 在此处查找有关 toml 格式的更多信息：https://github.com/toml-lang/toml
+# 要加载的模组加载器类型的名称 - 对于普通的 FML @Mod 模组，应为 javafml
+modLoader = "javafml" #必填
+# 与所述模组加载器匹配的版本范围 - 对于普通的 FML @Mod，它将是 Forge 版本
+loaderVersion = "[41,)" #必填 Forge 通常会在每个 Minecraft 版本中提升此版本号。请参阅我们的下载页面获取版本列表。
+# 你的模组的许可证。这是必填元数据，有助于更好地理解你的再分发属性。
+# 请在 https://choosealicense.com/ 上查看你的选项。保留所有权利是默认的版权立场，因此也是此处的默认设置。
+license = "All rights reserved"
+# 当此模组出现问题时，供人们参考的 URL
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #可选
+# 模组列表 - 允许多少个取决于各个模组加载器
+[[mods]] #必填
+# 模组的 modid
+modId = "YinJia" #必填
+# 模组的版本号 - 这里可以使用一些众所周知的 ${} 变量，或者直接硬编码
+# ${file.jarVersion} 将替换从模组的 JAR 文件元数据中读取的 Implementation-Version 值
+# 请参阅相关的 build.gradle 脚本，了解如何在构建过程中完全自动填充此值
+version = "1.0" #必填
+# 模组的显示名称
+displayName = "YinJia Mod" #必填
 
-# The description text for the mod (multi line!) (#mandatory)
-description='''
-This is a long form description of the mod. You can write whatever you want here
+# 用于查询此模组更新的 URL。请参阅 JSON 更新规范 https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
+#updateJSONURL="https://change.me.example.invalid/updates.json" #可选
 
-Have some lorem ipsum.
+# 此模组"主页"的 URL，显示在模组 UI 中
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #可选
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sagittis luctus odio eu tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque volutpat ligula eget lacus auctor sagittis. In hac habitasse platea dictumst. Nunc gravida elit vitae sem vehicula efficitur. Donec mattis ipsum et arcu lobortis, eleifend sagittis sem rutrum. Cras pharetra quam eget posuere fermentum. Sed id tincidunt justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+# 包含要显示的 logo 的文件名（在模组 JAR 的根目录中）
+logoFile = "examplemod.png" #可选
+# 显示在模组 UI 中的文本字段
+
+# credits = "YinJia'mod" 制作团队
+
+# 显示在模组 UI 中的文本字段
+authors = "YinLi,JiaYe" #作者
+
+# 显示测试控制你的模组在服务器连接屏幕中的显示
+# MATCH_VERSION 表示如果客户端和服务器上的版本不同，你的模组将导致红色 X。这是默认行为，如果你的模组有服务器和客户端元素，应该选择此项。
+# IGNORE_SERVER_VERSION 表示如果模组存在于服务器上但不在客户端上，你的模组不会导致红色 X。如果你的模组是仅服务器模组，应该使用此项。
+# IGNORE_ALL_VERSION 表示如果模组存在于客户端或服务器上，你的模组不会导致红色 X。这是一种特殊情况，仅当你的模组没有服务器组件时才应使用。
+# NONE 表示你的模组没有设置显示测试。你需要自己完成此操作，请参阅 IExtensionPoint.DisplayTest 获取更多信息。你可以使用此值定义任何你想要的方案。
+# 重要提示：这不是关于你的模组在哪些环境（客户端或专用服务器）中加载的指令。你的模组应该在它所在的任何位置加载（并且可能什么都不做！）。
+#displayTest="MATCH_VERSION" # 如果未指定任何内容，MATCH_VERSION 是默认值（#可选）
+
+# 模组的描述文本（多行！）（#必填）
+description = '''
+这是模组的详细描述。你可以在这里写任何你想写的内容
+
+这里是一些占位文本。
+
 '''
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
-    # the modid of the dependency
-    modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
-    mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[41,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
-    ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="BOTH"
-# Here's another dependency
+# 一个依赖项 - 使用 . 来表示特定 modid 的依赖关系。依赖项是可选的。
+[[dependencies.examplemod]] #可选
+# 依赖项的 modid
+modId = "forge" #必填
+# 此依赖项是否必须存在 - 如果不是，则必须在下面指定排序
+mandatory = true #必填
+# 依赖项的版本范围
+versionRange = "[41,)" #必填
+# 依赖项的排序关系 - 如果关系不是必需的，则需要 BEFORE 或 AFTER
+ordering = "NONE"
+# 此依赖项应用的端 - BOTH（两端）、CLIENT（客户端）或 SERVER（服务器）
+side = "BOTH"
+# 这是另一个依赖项
 [[dependencies.examplemod]]
-    modId="minecraft"
-    mandatory=true
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.19,1.20)"
-    ordering="NONE"
-    side="BOTH"
+modId = "minecraft"
+mandatory = true
+# 此版本范围声明了当前 Minecraft 版本的最小值，最多但不包括下一个主要版本
+versionRange = "[1.19,1.20)"
+ordering = "NONE"
+side = "BOTH"

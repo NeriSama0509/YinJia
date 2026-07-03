@@ -1,5 +1,6 @@
-package com.YinJia.YinJiaMod;
+package YinJia;
 
+import YinJia.item.ModItem;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,34 +13,31 @@ import org.slf4j.Logger;
 
 
 @Mod(YinJia.MODID)
-public class YinJia
-{
+public class YinJia {
 
     public static final String MODID = "YinJia";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public YinJia()
-    {
+    public YinJia() {
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModItem.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
 
     }
 
-    }
+}
